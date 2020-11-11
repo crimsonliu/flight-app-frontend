@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--start of navigation bar-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Logo</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/registration">User</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/flight">Admin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">More</a>
+    </li>
+  </ul>
+</nav>
+<!--end of navigation bar-->
+
+  <div class="container">
+  <h2>List of flights available</h2>
+  <table class="table">
+    <thead>
+      <tr >
+        <th>flight no.</th>
+        <th>operating airline</th>
+        <th>departure City</th>
+        <th>Arrival City</th>
+        <th>departure date</th>
+        <th>estimated departure time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of flights">
+        <td>{{flight.flightNumber}}</td>
+        <td>{{flight.operatingAirline}}</td>
+        <td>{{flight.departureCity}}</td>
+        <td>{{flight.arrivalCity}}</td>
+        <td>{{flight.dateOfDeparture}}</td>
+        <td>{{flight.estimatedDepartureTime}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
+
+

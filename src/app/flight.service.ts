@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Flight } from './flight';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class FlightService {
    }
 
    public addFlight(flight){
-     return this.http.post("http://localhost:9090/addFlight", flight, {responseType:'text' as 'json'});
+     return this.http.post("http://localhost:9090/addFlight",flight, {responseType:'text' as 'json'});
    }
 
    public displayflightinfo(){
@@ -22,6 +21,10 @@ export class FlightService {
 
    public findFlightByCityAndDate(flight){
       return this.http.post("http://localhost:9090/findFlightByCityAndDate", flight,{});
+   }
+
+   public findFlightById(id){
+      return this.http.get("http://localhost:9090/findFlightById/"+id,{});
    }
 
    getMessage(){

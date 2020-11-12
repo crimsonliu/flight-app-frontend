@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FlightService } from '../flight.service';
 import {Flight} from '../flight';
 import { Router } from '@angular/router';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-searchflight',

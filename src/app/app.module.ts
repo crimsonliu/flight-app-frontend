@@ -9,13 +9,16 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserDisplayflightinfoComponent } from './user-displayflightinfo/user-displayflightinfo.component';
 import { UserSearchflightComponent } from './user-searchflight/user-searchflight.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserReservationdetailsComponent} from './user-reservationdetails/user-reservationdetails.component';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule } from '@angular/material/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   {path: '', redirectTo:'flight', pathMatch:'full'},
@@ -23,7 +26,8 @@ const routes: Routes = [
   {path: 'registration', component: UserRegistrationComponent},
   {path: 'login', component: UserLoginComponent},
   {path: 'searchflight', component: UserSearchflightComponent},
-  {path: 'displayflights', component: UserDisplayflightinfoComponent}
+  {path: 'displayflights', component: UserDisplayflightinfoComponent},
+  {path: 'displayflights/:id', component: UserReservationdetailsComponent}
 ];
 
 @NgModule({
@@ -34,11 +38,13 @@ const routes: Routes = [
     UserLoginComponent,
     UserDisplayflightinfoComponent,
     UserSearchflightComponent,
+    UserReservationdetailsComponent
   ],
 
   imports: [
     BrowserModule,
     HttpClientModule,
+    CommonModule,
     FormsModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
@@ -47,7 +53,8 @@ const routes: Routes = [
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

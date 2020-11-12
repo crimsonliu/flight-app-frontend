@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Flight } from '../flight';
+import { Router } from '@angular/router';
 import { FlightService } from '../flight.service';
 
 @Component({
@@ -12,10 +11,14 @@ import { FlightService } from '../flight.service';
 export class UserDisplayflightinfoComponent implements OnInit {
 
   flights:any
-  constructor(private service: FlightService) { }
+  constructor(private service: FlightService, private router: Router) { }
 
   ngOnInit(): void {
     this.flights = this.service.getMessage();
+  }
+
+  onSelect(flight) {
+    this.router.navigate(['/displayflights',flight.id]);
   }
 
 }

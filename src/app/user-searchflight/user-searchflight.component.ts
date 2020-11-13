@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class UserSearchflightComponent implements OnInit {
 
-  flight: Flight = new Flight(0,"","","","","");
+  flight: Flight = new Flight(0,0,"","","","","");
   flights: any;
   options: string[] = ['Singapore', 'Shanghai', 'Los Angelas'];
 

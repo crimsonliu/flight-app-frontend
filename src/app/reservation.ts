@@ -2,7 +2,6 @@ import {Flight} from './flight'
 import {Passenger} from'./passenger'
 
 export class Reservation{
-
     flight: Flight;
     passenger: Passenger;
     checkedIn: boolean;

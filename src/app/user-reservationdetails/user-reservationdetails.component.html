@@ -10,6 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 <!--start of navigation bar-->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
@@ -29,6 +30,7 @@
   </ul>
 </nav>
 <!--end of navigation bar-->
+{{alert|json}}
 <br>
 <div class="container">
 
@@ -50,22 +52,22 @@
     <div class="form-container">
         <mat-form-field appearance="fill">
           <mat-label>FirstName</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)] = "passenger.firstName" name = "firstName">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Last Name</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)] = "passenger.lastName" name = "lastName">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)] = "passenger.email" name = "email">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Phone Number</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)] = "passenger.phoneNumber" name = "phoneNumber">
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" (onclick)="makeReservation()">buy ticket</button>
+        <button mat-raised-button color="primary" (click)="makeReservation()">buy ticket</button>
       </div>
       </mat-card-content>
     </mat-card>

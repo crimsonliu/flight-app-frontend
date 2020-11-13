@@ -1,5 +1,5 @@
 export class Flight{
-    
+    id: number;
     flightNumber: number;
     operatingAirline: string;
     departureCity: string;
@@ -8,6 +8,7 @@ export class Flight{
     estimatedDepartureTime: any;
 
     constructor(
+        id:number,
         flightNumber: number,
         operatingAirline: string,
         departureCity: string,

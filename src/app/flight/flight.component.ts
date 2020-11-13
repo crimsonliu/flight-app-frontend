@@ -11,7 +11,7 @@ import {FlightService} from '../flight.service';
 
 export class FlightComponent implements OnInit {
 
-  flight: Flight = new Flight(0,"","","","","");
+  flight: Flight = new Flight(0,0,"","","","","");
   message: any;
 
   constructor(private service: FlightService) { }

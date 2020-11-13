@@ -47,10 +47,26 @@
     <mat-card>
       <mat-card-title>Passenger Information:</mat-card-title>
       <mat-card-content>
+    <div class="form-container">
         <mat-form-field appearance="fill">
           <mat-label>FirstName</mat-label>
           <input matInput>
         </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (onclick)="makeReservation()">buy ticket</button>
+      </div>
       </mat-card-content>
     </mat-card>
 </div>

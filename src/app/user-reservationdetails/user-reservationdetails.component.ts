@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import { Flight } from '../flight';
 import { FlightService } from '../flight.service';
 
 @Component({
@@ -23,7 +22,11 @@ export class UserReservationdetailsComponent implements OnInit {
     resp.subscribe((data)=>{
       this.messages = data;
     })
-
   }
+
+  public makeReservation(){
+    
+  }
+
 
 }

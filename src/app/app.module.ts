@@ -20,6 +20,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { ReservationSuccessComponent } from './reservation-success/reservation-success.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const routes: Routes = [
   {path: '', redirectTo:'flight', pathMatch:'full'},
@@ -39,8 +41,13 @@ const routes: Routes = [
     UserLoginComponent,
     UserDisplayflightinfoComponent,
     UserSearchflightComponent,
-    UserReservationdetailsComponent
+    UserReservationdetailsComponent,
+    ReservationSuccessComponent
   ],
+
+  // entryComponents:[
+  //   ReservationSuccessComponent
+  // ],
 
   imports: [
     BrowserModule,
@@ -56,7 +63,8 @@ const routes: Routes = [
     MatNativeDateModule,
     MatToolbarModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

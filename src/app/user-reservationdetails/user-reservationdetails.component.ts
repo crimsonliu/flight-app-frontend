@@ -1,10 +1,12 @@
 import {Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { FlightService } from '../flight.service';
 import { ReservationService} from '../reservation.service'
 import {Reservation} from "../reservation"
 import { Passenger } from '../passenger';
 import { Flight } from '../flight';
+import { MatDialog } from '@angular/material/dialog';
+import { ReservationSuccessComponent } from '../reservation-success/reservation-success.component';
 
 @Component({
   selector: 'app-user-reservationdetails',
@@ -21,9 +23,11 @@ export class UserReservationdetailsComponent implements OnInit {
   flight: Flight = new Flight(0,0,"","","","","");
   reservation: Reservation = new Reservation(this.flight,this.passenger,false,0);
 
-  constructor(private route: ActivatedRoute, 
+  constructor(
+              private route: ActivatedRoute,
               private flightservice: FlightService,
-              private reservationservice: ReservationService
+              private reservationservice: ReservationService,
+              private dialog: MatDialog
               ) { }
 
   ngOnInit(): void {
@@ -42,7 +46,8 @@ export class UserReservationdetailsComponent implements OnInit {
     this.reservation.passenger = this.passenger;
     let resp = this.reservationservice.makeReservation(this.reservation);
     resp.subscribe((data)=>this.alert=data);
-    
+    this.dialog.open(ReservationSuccessComponent)
   }
+
 
 }

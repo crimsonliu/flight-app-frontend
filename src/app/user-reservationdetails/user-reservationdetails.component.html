@@ -30,22 +30,21 @@
   </ul>
 </nav>
 <!--end of navigation bar-->
-{{alert|json}}
 <br>
 <div class="container">
 
-    <mat-card>
-      <mat-card-title>Reservation Summary</mat-card-title>
-      <mat-card-content>
-        <p>flight number: {{messages.flightNumber}}</p>
-        <p>operating airline: {{messages.operatingAirline}}</p>
-        <p>Departure City: {{messages.departureCity}}</p>
-        <p>Arrival City: {{messages. arrivalCity}}</p>
-        <p>Departure Date: {{messages.dateOfDeparture}}</p>
-        <p>Estimated Departure Time: {{messages.estimatedDepartureTime}}</p>
-      </mat-card-content>
-    </mat-card>
-    <br>
+  <mat-card class="info">
+        <mat-card-title>Reservation Summary</mat-card-title>
+        <mat-card-content>
+          <p>flight number: {{messages.flightNumber}}</p>
+          <p>operating airline: {{messages.operatingAirline}}</p>
+          <p>Departure City: {{messages.departureCity}}</p>
+          <p>Arrival City: {{messages. arrivalCity}}</p>
+          <p>Departure Date: {{messages.dateOfDeparture}}</p>
+          <p>Estimated Departure Time: {{messages.estimatedDepartureTime}}</p>
+        </mat-card-content>
+      </mat-card>
+  <br>
     <mat-card>
       <mat-card-title>Passenger Information:</mat-card-title>
       <mat-card-content>
@@ -67,8 +66,9 @@
           <input matInput [(ngModel)] = "passenger.phoneNumber" name = "phoneNumber">
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" (click)="makeReservation()">buy ticket</button>
+        <button mat-raised-button color="primary" (click)="makeReservation()">Check Out</button>
       </div>
       </mat-card-content>
     </mat-card>
+
 </div>

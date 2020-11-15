@@ -1,57 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<!------ Include the above in your HEAD tag ---------->
-<body>
 
-<!--start of navigation bar-->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="#">Logo</a>
-    
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/registration">User</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/flight">Admin</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">More</a>
-      </li>
-    </ul>
-  </nav>
-<!--end of navigation bar-->
-    <div class="container">
-      <div class="row">
-          <div class="col-md-6">  
+<app-navbar></app-navbar>
+
+    <div class="login">
+      <mat-card>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
         <form>
           <div *ngIf="message" class="alert alert-danger">
             <strong>{{message}}</strong> 
           </div>
-          <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" [(ngModel)]="user.email" name="email">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" [(ngModel)]="user.password" name="password">
-          </div>
-            <button type="submit" class="btn btn-success" value="Register" 
-            (click)="loginUser()">Submit</button>
+          <mat-form-field appearance="fill">
+            <mat-label>email</mat-label>
+            <input matInput [(ngModel)]="user.email" name="email">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>password</mat-label>
+            <input matInput [(ngModel)]="user.password" name="password">
+          </mat-form-field>
+          <br>
+          <button mat-raised-button color="primary" (click)="loginUser()">Submit</button>
           </form>
-        </div>
+        </mat-card-content>
+      </mat-card>
     </div>
-</div>
-</body>
-</html>
+
 

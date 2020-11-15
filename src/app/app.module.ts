@@ -22,9 +22,12 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { ReservationSuccessComponent } from './reservation-success/reservation-success.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'flight', pathMatch:'full'},
+  {path: '', redirectTo:'home', pathMatch:'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'flight', component: FlightComponent},
   {path: 'registration', component: UserRegistrationComponent},
   {path: 'login', component: UserLoginComponent},
@@ -42,12 +45,10 @@ const routes: Routes = [
     UserDisplayflightinfoComponent,
     UserSearchflightComponent,
     UserReservationdetailsComponent,
-    ReservationSuccessComponent
+    ReservationSuccessComponent,
+    HomeComponent,
+    NavbarComponent
   ],
-
-  // entryComponents:[
-  //   ReservationSuccessComponent
-  // ],
 
   imports: [
     BrowserModule,

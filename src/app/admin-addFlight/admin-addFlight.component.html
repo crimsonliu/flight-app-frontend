@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<app-navbar></app-navbar>
+
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+         <form>
+            <div class="alert alert-success">
+                <strong>Key in the flight info!</strong> 
+                </div>
+
+            <div class="form-group">
+                <label for="Name"><span class="req">* </span> flight Number: </label>
+                <input type="text" class="form-control" [(ngModel)]="flight.flightNumber" name="flightNumber"/>
+            </div>
+
+            <div class="form-group">
+                <label for="firstname"><span class="req">* </span> Operating Airline </label>
+                <input class="form-control" type="text" [(ngModel)]="flight.operatingAirline" name="operatingAirline"/>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname"><span class="req">* </span> Departure City : </label>
+                <input class="form-control" type="text" [(ngModel)]="flight.departureCity" name="departureCity"/>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><span class="req">* </span> Arrival City: </label>
+                <input class="form-control" type="text" [(ngModel)]="flight.arrivalCity" name="arrivalCity"/>
+            </div>
+            <div class="form-group">
+                <label for="email"><span class="req">* </span> Date of Departure: </label>
+                <input class="form-control" type="text" [(ngModel)]="flight.dateOfDeparture" name="dateOfDeparture"/>
+            </div>
+            <div class="form-group">
+                <label for="email"><span class="req">* </span> Estimated Departure Time: </label>
+                <input class="form-control" type="text" [(ngModel)]="flight.estimatedDepartureTime" name="estimatedDepartureTime"/>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="addFlight()">
+            </div>
+    </form>
+    </div>
+    <div class="col-lg-3"></div>
+   </div>
+</div>
+</body>
+</html>

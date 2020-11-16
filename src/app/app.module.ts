@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { FlightComponent } from './flight/flight.component';
+import { AdminAddFlightComponent } from './admin-addFlight/admin-addFlight.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule,Routes} from '@angular/router';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
@@ -24,11 +24,12 @@ import { ReservationSuccessComponent } from './reservation-success/reservation-s
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {path: '', redirectTo:'home', pathMatch:'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'flight', component: FlightComponent},
+  {path: 'flight', component: AdminAddFlightComponent},
   {path: 'registration', component: UserRegistrationComponent},
   {path: 'login', component: UserLoginComponent},
   {path: 'searchflight', component: UserSearchflightComponent},
@@ -39,7 +40,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    FlightComponent,
+    AdminAddFlightComponent,
     UserRegistrationComponent,
     UserLoginComponent,
     UserDisplayflightinfoComponent,
@@ -65,7 +66,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

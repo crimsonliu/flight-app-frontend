@@ -1,28 +1,46 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
 <app-navbar></app-navbar>
 
-    <div class="login">
-      <mat-card>
-        <mat-card-title>Login</mat-card-title>
-        <mat-card-content>
-        <form>
-          <div *ngIf="message" class="alert alert-danger">
-            <strong>{{message}}</strong> 
-          </div>
-          <mat-form-field appearance="fill">
-            <mat-label>email</mat-label>
-            <input matInput [(ngModel)]="user.email" name="email">
-          </mat-form-field>
-          <br>
-          <mat-form-field appearance="fill">
-            <mat-label>password</mat-label>
-            <input matInput [(ngModel)]="user.password" name="password">
-          </mat-form-field>
-          <br>
-          <button mat-raised-button color="primary" (click)="loginUser()">Submit</button>
-          </form>
-        </mat-card-content>
-      </mat-card>
+<!--start of login form-->
+  <div class="container" style="padding-top: 100px;">
+    <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <form>
+        <div *ngIf="message" class="alert alert-danger">
+          <strong>{{message}}</strong> 
+        </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" placeholder="Enter email" 
+          [(ngModel)]="user.email" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" placeholder="Enter password" 
+        [(ngModel)]="user.password" name="password">
+      </div>
+      <button type="button" class="btn btn-link" routerLink="/register">sign up</button>      
+      <br>
+      <button type="submit" class="btn btn-success" (click)="loginUser()">Submit</button>
+      </form>
     </div>
+    <div class="col-lg-4"></div>
+    </div>  
+  </div>
+  </body>
+</html>
 
 

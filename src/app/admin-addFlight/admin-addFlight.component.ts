@@ -5,11 +5,11 @@ import {FlightService} from '../flight.service';
 
 @Component({
   selector: 'app-flight',
-  templateUrl: './flight.component.html',
-  styleUrls: ['./flight.component.css']
+  templateUrl: './admin-addFlight.component.html',
+  styleUrls: ['./admin-addFlight.component.css']
 })
 
-export class FlightComponent implements OnInit {
+export class AdminAddFlightComponent implements OnInit {
 
   flight: Flight = new Flight(0,0,"","","","","");
   message: any;

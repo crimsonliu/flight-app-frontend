@@ -13,10 +13,12 @@ export class UserLoginComponent implements OnInit {
 
   user: User = new User("","","","");
   message: any;
+  hide: boolean;
 
   constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.hide = true;
   }
 
   public loginUser(){
